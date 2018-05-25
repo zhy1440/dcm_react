@@ -1,0 +1,6 @@
+https://react-bootstrap.github.io/home
+https://github.com/facebook/create-react-app#create-react-app-
+https://reacttraining.com/react-router/web/example/basic
+https://serverless-stack.com/chapters/code-splitting-in-create-react-app.html
+http://colorhunt.co/c/361
+https://github.com/react-bootstrap/react-router-bootstrap
