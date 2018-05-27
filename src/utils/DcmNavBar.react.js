@@ -6,23 +6,28 @@ import { LinkContainer } from "react-router-bootstrap";
 class DcmNavBar extends Component {
     render() {
         return (
-            <Navbar inverse collapseOnSelect>
+            <Navbar inverse fixedTop collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#brand">大肠面全球购</a>
+                        <LinkContainer to="/">
+                            <a>大肠面订单管理系统</a>
+                        </LinkContainer>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
                 <Navbar.Collapse>
                     <Nav>
-                        <NavDropdown eventKey={1} title="捞单录入" id="basic-nav-dropdown">
+                        <LinkContainer to="/orderplace">
+                            <NavItem eventKey={1}>捞单录入</NavItem>
+                        </LinkContainer>
+                        {/* <NavDropdown eventKey={1} title="捞单录入" id="basic-nav-dropdown">
                             <LinkContainer to="/orderplace">
                                 <NavItem eventKey={1.1}>新建订单</NavItem>
                             </LinkContainer>
                             <NavItem eventKey={1.1} href="#">
                                 App订单补录
                             </NavItem>
-                        </NavDropdown>
+                        </NavDropdown> */}
                         <LinkContainer to="/feedback">
                             <NavItem eventKey={2}>
                                 成团反馈

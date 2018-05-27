@@ -6,7 +6,8 @@
 
 import React, { Component } from "react";
 import OrderForm from "../modules/order_place/OrderForm.react";
-import { Panel } from "react-bootstrap";
+import { Panel, PageHeader, Row, Col, TabContainer } from "react-bootstrap";
+import { Tree } from "react-ui-tree";
 
 class OrderPlaceMasterView extends Component {
     // constructor(props) {
@@ -15,12 +16,20 @@ class OrderPlaceMasterView extends Component {
 
     render() {
         return (
-            <Panel>
-                <Panel.Heading>lalala</Panel.Heading>
-                <Panel.Body>
-                    <OrderForm />
-                </Panel.Body>
-            </Panel>
+            <div className="container">
+                <Row>
+                    <Col sm={3} md={2} className="sidebar">
+                        {/* <Tree></Tree> */}
+                        <div className="nav nav-sidebar">lalala</div>
+                    </Col>
+                    <Col smOffset={3} sm={9} mdOffset={2} md={10}>
+                        <PageHeader bsClass="left">
+                            捞单录入<small>新建</small>
+                        </PageHeader>
+                        <OrderForm />
+                    </Col>
+                </Row>
+            </div>
         );
     }
 }

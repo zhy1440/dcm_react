@@ -1,4 +1,5 @@
 @import './sass/example/TicTacToe.scss';
+@import './sass/example/kongzhitai.scss';
 
 .App {
   text-align: center;

@@ -19,8 +19,8 @@ class MainBoard extends Component {
                 <div>
                     <DcmNavBar />
                     <Route exact path="/" component={Home} />
-                    <Route path="/feedback" component={FeedBacks} />
                     <Route path="/orderplace" component={OrderPlaceMasterView} />
+                    <Route path="/feedback" component={FeedBacks} />
                 </div>
             </Router>
         );

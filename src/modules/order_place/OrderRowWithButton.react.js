@@ -5,9 +5,17 @@
  **/
 
 import React, { Component } from "react";
-import { FormGroup, Col, FormControl, ControlLabel, HelpBlock } from "react-bootstrap";
+import {
+    FormGroup,
+    Col,
+    FormControl,
+    ControlLabel,
+    HelpBlock,
+    InputGroup,
+    Button
+} from "react-bootstrap";
 
-class OrderRow extends Component {
+class OrderRowWithButton extends Component {
     constructor(props) {
         super(props);
 
@@ -18,6 +26,10 @@ class OrderRow extends Component {
             value: "",
             validate: "",
             errMessage: ""
+        };
+        this.handleClick = () => {
+            this.setState({ value: "无" });
+            this.setState({ validate: "" });
         };
     }
 
@@ -55,14 +67,19 @@ class OrderRow extends Component {
                     {name}:
                 </Col>
                 <Col sm={8}>
-                    <FormControl
-                        type="text"
-                        value={this.state.value}
-                        placeholder={must ? "必填" : ""}
-                        onChange={this.handleChange}
-                        onBlur={must ? this.handleBlur : null}
-                    />
-                    <FormControl.Feedback />
+                    <InputGroup>
+                        <InputGroup.Button>
+                            <Button onClick={this.handleClick}>无</Button>
+                        </InputGroup.Button>
+                        <FormControl
+                            type="text"
+                            value={this.state.value}
+                            placeholder={must ? "必填" : ""}
+                            onChange={this.handleChange}
+                            onBlur={must ? this.handleBlur : null}
+                        />
+                        <FormControl.Feedback />
+                    </InputGroup>
                 </Col>
                 <Col sm={2}>
                     <span>
@@ -75,4 +92,4 @@ class OrderRow extends Component {
     }
 }
 
-export default OrderRow;
+export default OrderRowWithButton;
