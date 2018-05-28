@@ -8,6 +8,7 @@ import React, { Component } from "react";
 import { FormGroup, Form, Col, Checkbox, Button } from "react-bootstrap";
 import OrderRow from "./OrderRow.react";
 import OrderRowWithButton from "./OrderRowWithButton.react";
+import FileUpload from '../../example/FileUpload.react';
 
 class OrderForm extends Component {
     constructor(props) {
@@ -53,6 +54,7 @@ class OrderForm extends Component {
                         <Button type="submit">Sign in</Button>
                     </Col>
                 </FormGroup>{" "}
+                <FileUpload/>
             </Form>
         );
     }

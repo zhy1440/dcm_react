@@ -63,7 +63,7 @@ class OrderRowWithButton extends Component {
         return (
             <FormGroup controlId={id} validationState={this.state.validate}>
                 <Col componentClass={ControlLabel} className="text-left" sm={2}>
-                    {must ? <span class="text-danger">*</span> : null}
+                    {must ? <span className="text-danger">*</span> : null}
                     {name}:
                 </Col>
                 <Col sm={8}>

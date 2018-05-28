@@ -6,8 +6,8 @@
 
 import React, { Component } from "react";
 import OrderForm from "../modules/order_place/OrderForm.react";
-import { Panel, PageHeader, Row, Col, TabContainer } from "react-bootstrap";
-import { Tree } from "react-ui-tree";
+import {  PageHeader, Row, Col } from "react-bootstrap";
+// import { Tree } from "react-ui-tree";
 
 class OrderPlaceMasterView extends Component {
     // constructor(props) {
