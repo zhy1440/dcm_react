@@ -29,9 +29,7 @@ class DcmNavBar extends Component {
                             </NavItem>
                         </NavDropdown> */}
                         <LinkContainer to="/feedback">
-                            <NavItem eventKey={2}>
-                                成团反馈
-                            </NavItem>
+                            <NavItem eventKey={2}>成团反馈</NavItem>
                         </LinkContainer>
                         <NavDropdown eventKey={3} title="发货" id="basic-nav-dropdown">
                             <MenuItem eventKey={3.1}>发货选取</MenuItem>
@@ -41,6 +39,9 @@ class DcmNavBar extends Component {
                             <MenuItem eventKey={3.3}>Separated link</MenuItem>
                         </NavDropdown>
                     </Nav>
+                    <Navbar.Text pullRight>
+                        <TickingClock />
+                    </Navbar.Text>
                     <Nav pullRight>
                         <NavItem eventKey={1} href="#">
                             Link Right
@@ -48,9 +49,6 @@ class DcmNavBar extends Component {
                         <NavItem eventKey={2} href="#">
                             Link Right
                         </NavItem>
-                        <Navbar.Text pullRight>
-                            <TickingClock />
-                        </Navbar.Text>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

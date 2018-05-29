@@ -5,9 +5,18 @@
  **/
 
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { FormGroup, Col, FormControl, ControlLabel, HelpBlock } from "react-bootstrap";
 
 class OrderRow extends Component {
+    static get propTypes() {
+        return {
+            id: PropTypes.string,
+            name: PropTypes.string,
+            must: PropTypes.bool
+        };
+    }
+
     constructor(props) {
         super(props);
 

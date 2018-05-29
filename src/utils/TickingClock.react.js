@@ -24,7 +24,7 @@ class TickingClock extends Component {
   }
 
   render() {
-    return <div>{this.state.currentTime}</div>;
+    return this.state.currentTime;
   }
 }
 
