@@ -25,25 +25,18 @@ class OrderRow extends Component {
 
         this.state = {
             value: "",
-            validate: "",
+            validate: null,
             errMessage: ""
         };
     }
-
-    // getValidationState(value) {
-    //     const length = value.length;
-    //     // const length = this.state.value.length;
-    //     if (length > 10) return "success";
-    //     else if (length > 5) return "warning";
-    //     else if (length > 0) return "error";
-    //     return null;
-    // }
 
     getNullValidation() {
         const length = this.state.value.length;
         if (length === 0) {
             this.setState({ errMessage: "不能为空" });
             return "error";
+        } else{
+            return "success";
         }
     }
 

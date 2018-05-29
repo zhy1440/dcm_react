@@ -24,7 +24,7 @@ class OrderRowWithButton extends Component {
 
         this.state = {
             value: "",
-            validate: "",
+            validate: null,
             errMessage: ""
         };
         this.handleClick = () => {
@@ -47,6 +47,9 @@ class OrderRowWithButton extends Component {
         if (length === 0) {
             this.setState({ errMessage: "不能为空" });
             return "error";
+        }
+        else {
+            return "success";
         }
     }
 
