@@ -6,30 +6,29 @@
 
 import React, { Component } from "react";
 import OrderForm from "../modules/order_place/OrderForm.react";
-import {  PageHeader, Row, Col } from "react-bootstrap";
+import { PageHeader, Row, Col, Grid } from "react-bootstrap";
 // import { Tree } from "react-ui-tree";
 
 class OrderPlaceMasterView extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
 
     render() {
         return (
-            <div className="container">
+            <Grid fluid>
                 <Row>
                     <Col sm={3} md={2} className="sidebar">
                         {/* <Tree></Tree> */}
                         <div className="nav nav-sidebar">lalala</div>
                     </Col>
-                    <Col smOffset={3} sm={9} mdOffset={2} md={10}>
+                    <Col smOffset={3} sm={6} mdOffset={2} md={8}>
                         <PageHeader bsClass="left">
                             捞单录入<small>新建</small>
                         </PageHeader>
                         <OrderForm />
                     </Col>
+                    <Col sm={3} md={2}>
+                    </Col>
                 </Row>
-            </div>
+            </Grid>
         );
     }
 }

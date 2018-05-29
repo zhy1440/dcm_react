@@ -8,12 +8,14 @@ import React, { Component } from "react";
 import { FormGroup, Form, Col, Checkbox, Button } from "react-bootstrap";
 import OrderRow from "./OrderRow.react";
 import OrderRowWithButton from "./OrderRowWithButton.react";
-import PicUploadRow from './PicUploadRow.react';
+import PicUploadRow from "./PicUploadRow.react";
+import { OrderPlaceFields } from "../../enum/OrderFieldEnum";
 
 class OrderForm extends Component {
     constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
             value: ""
@@ -32,29 +34,32 @@ class OrderForm extends Component {
         this.setState({ value: e.target.value });
     }
 
+    handleSubmit(e) {}
+
     render() {
+        const orderList = OrderPlaceFields;
         return (
-            <Form horizontal>
-                <OrderRow id="id" name="用户Id" must />
-                <OrderRow id="link" name="网站链接" must />
-                <OrderRow id="spName" name="商品名称" must />
-                <OrderRow id="perPrice" name="单价" must />
-                <OrderRow id="amount" name="数量" must />
-                <OrderRowWithButton id="color" name="颜色" must />
-                <OrderRowWithButton id="size" name="尺寸" must />
-                <OrderRow id="discount" name="折扣" must />
-                <OrderRow id="comment" name="备注" />
-                <FormGroup>
+            <Form horizontal onSubmit={this.handleSubmit}>
+                {orderList[0].map((field) => (
+                    <OrderRow id={field.fieldName} name={field.displayName} must ={field.must}/>
+                ))}
+                {orderList[1].map((field) => (
+                    <OrderRowWithButton id={field.fieldName} name={field.displayName} must ={field.must}/>
+                ))}
+                {orderList[2].map((field) => (
+                    <OrderRow id={field.fieldName} name={field.displayName} must ={field.must}/>
+                ))}
+                <PicUploadRow />
+                {/* <FormGroup>
                     <Col smOffset={2} sm={10}>
                         <Checkbox>Remember me</Checkbox>
                     </Col>
-                </FormGroup>
+                </FormGroup> */}
                 <FormGroup>
                     <Col smOffset={2} sm={10}>
                         <Button type="submit">Sign in</Button>
                     </Col>
                 </FormGroup>{" "}
-                <PicUploadRow/>
             </Form>
         );
     }

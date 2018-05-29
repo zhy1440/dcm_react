@@ -6,7 +6,7 @@ import { LinkContainer } from "react-router-bootstrap";
 class DcmNavBar extends Component {
     render() {
         return (
-            <Navbar inverse fixedTop collapseOnSelect>
+            <Navbar fluid inverse fixedTop collapseOnSelect>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <LinkContainer to="/">
